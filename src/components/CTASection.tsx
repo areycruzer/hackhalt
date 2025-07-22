@@ -15,9 +15,11 @@ const CTASection = () => {
               Ready to join our next session? Want us to speak at your school or office?
             </p>
             
-            <Button variant="minimal" size="lg" className="mb-16">
-              Get In Touch
-            </Button>
+            <a href="https://linktr.ee/hackhalt" target="_blank" rel="noopener noreferrer">
+              <Button variant="minimal" size="lg" className="mb-16">
+                Get In Touch
+              </Button>
+            </a>
           </ScrollAnimate>
           
           {/* Contact Options */}
@@ -50,7 +52,7 @@ const CTASection = () => {
           <ScrollAnimate delay={300}>
             <div className="mt-16 pt-8 border-t border-border">
               <p className="text-muted-foreground">
-                Based in Delhi & Gurugram • Backed by Local Police • Made with ❤️ by young people, for young people
+                Based in Delhi & Gurugram • Backed by Local Police • Made with ❤️ by Swyam/Kavya, for HackHalt
               </p>
             </div>
           </ScrollAnimate>

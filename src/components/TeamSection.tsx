@@ -1,9 +1,10 @@
 import { ScrollAnimate } from "@/hooks/useScrollAnimation";
+import communityLeaderImg from "../assets/community-leader.jpg";
 
 const TeamSection = () => {
   const managers = [
-    "Priya Sharma", "Arjun Patel", "Sneha Gupta", "Rohit Kumar",
-    "Ananya Singh", "Vikash Yadav", "Meera Joshi", "Karan Malhotra"
+    "Abhinav Kapur", "Krish Gupta", "Sanjana", "Kavya Bhatia",
+    "Mridula Kapoor", "Shivam Rawat", "Swyam Sharma", "Lakshya Madaan"
   ];
 
   return (
@@ -26,12 +27,12 @@ const TeamSection = () => {
             <div className="border border-border p-8 rounded-lg mb-12 text-center">
               <div className="mb-4">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=200&h=200&fit=crop&crop=face" 
+                  src={communityLeaderImg} 
                   alt="Community Leader" 
                   className="w-24 h-24 rounded-full mx-auto object-cover"
                 />
               </div>
-              <h3 className="font-heading text-2xl font-bold mb-2">Community Leader</h3>
+              <h3 className="font-heading text-2xl font-bold mb-2">Sonu Kumar (Community Leader)</h3>
               <p className="text-muted-foreground">
                 Tech enthusiast, mentor, community-builder. The one who started this whole thing 
                 after seeing too many friends fall for online scams.

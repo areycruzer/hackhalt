@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "../assets/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src="/lovable-uploads/8c6b0012-b47c-44e4-bfe2-b1bd32087d8d.png" 
+              src={logo} 
               alt="HackHalt Logo" 
               className="h-8 w-auto"
             />
@@ -46,9 +47,11 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
-              <Button variant="minimal" size="sm">
-                Join Now
-              </Button>
+              <a href="https://chat.whatsapp.com/K3NYCBjvlfF326HBpF1GL9?mode=ac_t" target="_blank" rel="noopener noreferrer">
+                <Button variant="minimal" size="sm"> 
+                  Join Now
+                </Button>
+              </a>
             </div>
           </div>
           
@@ -77,9 +80,11 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="pt-2">
-                <Button variant="minimal" size="sm" className="w-full">
-                  Join Now
-                </Button>
+                <a href="https://chat.whatsapp.com/K3NYCBjvlfF326HBpF1GL9?mode=ac_t" target="_blank" rel="noopener noreferrer">
+                  <Button variant="minimal" size="sm" className="w-full">
+                    Join Now
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
