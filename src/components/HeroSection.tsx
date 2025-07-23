@@ -15,7 +15,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&crop=center"//video
+              src="src/assets/HackHalt Logo.jpg"//video
               alt="HackHalt - Cyber Safety Awareness India"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-xl"
             />
@@ -41,7 +41,7 @@ const HeroSection = () => {
           >
             <span>1000+ Citizens Empowered</span>
             <span>30+ Cyber Workshops Conducted</span>
-            <span>Backed by Delhi & Gurugram Police</span>
+            <span>Backed by Gurugram & Delhi Police</span>
           </motion.div>
 
           {/* Description */}

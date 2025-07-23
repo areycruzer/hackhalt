@@ -1,88 +1,136 @@
-import { ScrollAnimate } from "@/hooks/useScrollAnimation";
+"use client";
+
+import { ShieldCheck, Presentation, School, Brain, Lightbulb, Users } from "lucide-react";
+import { motion } from "framer-motion";
+const services = [
+  {
+    title: "Interactive Cyber Awareness Sessions",
+    description: "Empowering students and young professionals with practical knowledge through engaging, jargon-free workshops.",
+    icon: <Presentation className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Real-World Cyber Crime Prevention Talks",
+    description: "Learn from true incidents and understand how to safeguard yourself from the most common digital threats.",
+    icon: <ShieldCheck className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Tailored Programs for Institutions",
+    description: "Each session is customized for schools, colleges, or corporate teams—based on age group, industry, and current trends.",
+    icon: <School className="h-8 w-8 text-primary" />,
+  },
+  {
+    title: "Digital Hygiene Bootcamps & Campaigns",
+    description: "Promoting safe digital habits—from phishing awareness to responsible social media use.",
+    icon: <Brain className="h-8 w-8 text-primary" />,
+  }
+];
+
+// Why We're Different: Plackcards with colors
+const features = [
+  {
+    title: "Youth-Led, Future-Focused",
+    description: "HackHalt is driven by passionate youth who understand today’s digital behaviors and threats. We relate, educate, and activate.",
+    icon: <Users className="h-7 w-7 text-white" />,
+    direction: "left",
+    color: "from-purple-600 to-indigo-600",
+  },
+  {
+    title: "Law-Enforced & Trusted",
+    description: "With strong backing from Gurugram Police and Delhi Police (East Division), our sessions deliver authentic, impactful and legally-aligned cybersecurity insights.",
+    icon: <ShieldCheck className="h-7 w-7 text-white" />,
+    direction: "left",
+    color: "from-emerald-600 to-green-500",
+  },
+  {
+    title: "Interactive. Real. Hands-On.",
+    description: "From real scam drills to red flags in live apps, our approach is not theory, it's preparation through simulation.",
+    icon: <Lightbulb className="h-7 w-7 text-white" />,
+    direction: "left",
+    color: "from-pink-600 to-rose-500",
+  },
+];
+
+const slideIn = (direction: string) => ({
+  hidden: {
+    opacity: 0,
+    x: direction === "left" ? -100 : 100,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+});
 
 const ServicesSection = () => {
-  const services = [
-    {
-      title: "Cyber Awareness Workshops",
-      description: "Hands-on, no-jargon sessions for students & young pros."
-    },
-    {
-      title: "Cyber Crime Prevention Talks", 
-      description: "Real stories, real advice—learn what hackers won't tell you."
-    },
-    {
-      title: "School, College & Corporate Sessions",
-      description: "Tailored for every age group or office."
-    },
-    {
-      title: "Digital Hygiene Training & Campaigns",
-      description: "From phishing drills to safe-scroll habits."
-    }
-  ];
-
   return (
-    <section id="services" className="py-20 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <ScrollAnimate>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-center">
-              What We <span className="text-muted-foreground">Actually Do</span>
+    <section className="bg-background" id = "services">
+      {/* What We Do Section */}
+      <div className="container mx-auto px-6 py-24">
+        <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4 text-center">
+          What We <span className="text-muted-foreground">Actually Do</span>
+        </h2>
+        <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto">
+          We don't do lectures. We do impact. Every activity is action-first and designed to equip you with real-world digital survival skills.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          {services.map((service, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              key={index}
+              className="bg-card rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-border flex items-start gap-4"
+            >
+              <div>{service.icon}</div>
+              <div>
+                <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
+                <p className="text-sm text-muted-foreground">{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Why We're Different Section */}
+      <div className="bg-black py-28 px-6 md:px-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-white text-5xl font-bold tracking-tight">
+              Why We’re <span className="text-muted-foreground">Different</span>
             </h2>
-            <p className="text-xl text-muted-foreground text-center mb-16">
-              No fancy marketing speak here. Just real solutions for real cyber problems.
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              We’re not just another cyber awareness campaign, we’re a movement.
             </p>
-          </ScrollAnimate>
-          
-          {/* Services List */}
-          <div className="space-y-8">
-            {services.map((service, index) => (
-              <ScrollAnimate key={index} delay={index * 100}>
-                <div className="border border-border p-8 rounded-lg">
-                  <div className="mb-4">
-                    <img 
-                      src={`https://images.unsplash.com/photo-${index % 2 === 0 ? '1488590528505-98d2b5aba04b' : '1486312338219-ce68d2c6f44d'}?w=400&h=200&fit=crop&crop=center`} 
-                      alt={service.title} 
-                      className="w-full h-32 object-cover rounded-lg"
-                    />
-                  </div>
-                  <h3 className="font-heading text-xl font-bold mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {service.description}
-                  </p>
+          </div>
+
+          <div className="space-y-20">
+            {features.map((item, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                variants={slideIn(item.direction)}
+                className={`flex flex-col md:flex-row ${
+                  item.direction === "right" ? "md:flex-row-reverse" : ""
+                } items-center gap-10`}
+              >
+                <div
+                  className={`flex-shrink-0 bg-gradient-to-br ${item.color} text-white p-6 rounded-2xl shadow-lg w-[300px] text-center hover:scale-105 transition-transform duration-300`}
+                >
+                  <div className="flex justify-center mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
                 </div>
-              </ScrollAnimate>
+
+                <p className="text-gray-300 text-lg max-w-xl leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
             ))}
           </div>
-          
-          {/* Why Different */}
-          <ScrollAnimate delay={500}>
-            <div className="mt-16 border border-border p-8 rounded-lg">
-              <h3 className="font-heading text-2xl font-bold mb-6 text-center">Why We're Different</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div>
-                  <h4 className="font-heading font-semibold mb-2">Youth-Led Approach</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Peer-to-peer learning hits different. We get your digital habits because we share them.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-heading font-semibold mb-2">Police Backing</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Our content is vetted by cybercrime experts, so you're getting the real deal.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-heading font-semibold mb-2">Practical Focus</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Less theory, more "here's what to do when you get that suspicious SMS."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollAnimate>
         </div>
       </div>
     </section>
