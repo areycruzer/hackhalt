@@ -21,7 +21,7 @@ const AboutSection = () => {
             <ScrollAnimate delay={100}>
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <img
-                  src="src/assets/Amity School Session.jpg"
+                  src="src/assets/Amity_School_Session.jpg"
                   alt="Cyber awareness session in school"
                   className="w-full md:w-1/2 rounded-xl shadow-xl"
                 />
@@ -40,7 +40,7 @@ const AboutSection = () => {
             <ScrollAnimate delay={200}>
               <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                 <img
-                  src="src/assets/ASN School Session.jpg"
+                  src="src/assets/ASN_School_Session.jpg"
                   alt="HackHalt team on-ground"
                   className="w-full md:w-1/2 rounded-xl shadow-xl"
                 />

@@ -16,7 +16,7 @@ const CTASection = () => {
             <p className="text-xl mb-10 text-muted-foreground">
               Whether you're a student, educator, or a changemaker — we’d love to collaborate with you.
             </p>
-            <a href="https://linktr.ee/hackhalt" target="_blank" rel="noopener noreferrer">
+            <a href="https://links.hackhalt.org/" target="_blank" rel="noopener noreferrer">
               <Button variant="default" size="lg" className="px-10 text-lg">
                 Get In Touch
               </Button>

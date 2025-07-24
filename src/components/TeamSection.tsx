@@ -1,5 +1,5 @@
 import { ScrollAnimate } from "@/hooks/useScrollAnimation";
-import teamImage from "../assets/HackHalt - Teams.png"; // ✅ Correct image import path
+import teamImage from "../assets/HackHalt-Teams.png"; // ✅ Correct image import path
 
 const teamMembers = [
   "Sonu Kumar",

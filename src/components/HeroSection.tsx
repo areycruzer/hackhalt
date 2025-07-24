@@ -15,7 +15,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img
-              src="src/assets/HackHalt Logo.jpg"//video
+              src="src/assets/HackHalt_Logo.jpg"//video
               alt="HackHalt - Cyber Safety Awareness India"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-xl"
             />
@@ -60,9 +60,11 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            <Button variant="minimal" size="lg" className="text-lg px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl shadow-lg">
-              Join the Cyber Awareness Movement
-            </Button>
+            <a href="https://links.hackhalt.org/" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" size="lg" className="text-lg px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl shadow-lg">
+                Join the Cyber Awareness Movement
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>
